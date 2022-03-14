@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto rotate</title>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script>
+        function pageJump(WXULR) {
+            console.log(WXULR)
+            wx.miniProgram.navigateTo({
+                url: WXULR
+            });
+        }
+    </script>
+    <link rel="stylesheet" href="./css/pannellum.css" />
+    <script type="text/javascript" src="./js/pannellum.js"></script>
+
+    <style>
+        .container-full {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+        }
+
+        #panorama {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-full">
+
+        <div id="panorama"></div>
+    </div>
+
+    <script>
+        pannellum.viewer('panorama', {
+            "type": "equirectangular",
+            "panorama": "https://pannellum.org/images/jfk.jpg",
+            "autoRotate": -2,
+            "autoLoad": true,
+            "hotSpots": [{
+                    "pitch": 14.1,
+                    "yaw": 1.5,
+                    "type": "info",
+                    "text": "Baltimore Museum of Art",
+                    "WXURL": "/pages/login/login"
+                },
+                {
+                    "pitch": -9.4,
+                    "yaw": 222.6,
+                    "type": "info",
+                    "text": "Art Museum Drive"
+                },
+                {
+                    "pitch": -0.9,
+                    "yaw": 144.4,
+                    "type": "info",
+                    "text": "North Charles Street"
+                }
+            ]
+        });
+    </script>
+
+</body>
+
+</html>
