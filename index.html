@@ -9,7 +9,7 @@
     <script>
         function pageJump(WXULR) {
             console.log(WXULR)
-            wx.miniProgram.navigateTo({
+            wx.miniProgram.redirectTo({
                 url: WXULR
             });
         }
@@ -42,7 +42,7 @@
     <script>
         pannellum.viewer('panorama', {
             "type": "equirectangular",
-            "panorama": "https://pannellum.org/images/jfk.jpg",
+            "panorama": "https://dev0101.com/images/jfk.jpg",
             "autoRotate": -2,
             "autoLoad": true,
             "hotSpots": [{
